@@ -1,0 +1,23 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Random sorting is roughly equal to reversed sorting, and already sorted possibility takes shorter time.
+
+//random 0.104, reversed 0.091, sorted 0.047 (5000)
+//random 0.324, reversed 0.291, sorted 0.129 (10000)
+//random 7.793, reversed 5.625, sorted 2.194 (50000)
+
+sort2 uses: Merge Sort
+
+How do you know?: All possibilities take roughly equal amount of time, and it is the fastest.
+
+//random 0.068, reversed 0.049, sorted 0.051 (5000)
+//random 0.111, reversed 0.095, sorted 0.106 (10000)
+//random 0.430, reversed 0.522, sorted 0.504 (50000)
+
+sort3 uses: Selection Sort
+
+How do you know?: All possibilities take roughly equal amount of time, but sort3 works slower than sort2.
+
+//random 0.056, reversed 0.074, sorted 0.070 (5000)
+//random 0.189, reversed 0.186, sorted 0.240 (10000)
+//random 3.764, reversed 3.466, sorted 3.189 (50000)

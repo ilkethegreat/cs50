@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1 style="text-align:center; padding-bottom: 15px; padding-top:15px; background-color: rgb(23,23,23); color: rgb(200,200,200);">TODO</h1>
+    {% if tasks|length < 1 %}
+    <h1 style="text-align:center; padding-bottom: 15px; padding-top:15px; font-size: 17px;">There are no tasks added for now. Add one below!</h1>
+    {% else %}
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Added</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        {% for task in tasks %}
+        <tbody>
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.dateCreated.date() }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+         </tbody>
+        {% endfor %}
+      </table>
+      {% endif %}
+      <div>
+        <form class="form" action="/" method="POST">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add Task">
+        </form>
+      </div>
+</div>
+
+{% endblock %}
